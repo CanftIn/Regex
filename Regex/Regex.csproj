@@ -43,6 +43,9 @@
     <Compile Include="MatchContext.cs" />
     <Compile Include="IMatch.cs" />
     <Compile Include="MatchChar.cs" />
+    <Compile Include="MatchList.cs" />
+    <Compile Include="MatchManyBase.cs" />
+    <Compile Include="MatchTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
