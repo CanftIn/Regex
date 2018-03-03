@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Regex
 {
-    public class Context
+    public class MatchContext
     {
         public readonly string matchString;
         public int offset = 0;
 
-        public Context(string matchString)
+        public MatchContext(string matchString)
         {
             this.matchString = matchString;
         }
+
+        public char curr => matchString[offset];
 
         public int length => matchString.Length;
 

@@ -10,14 +10,26 @@ namespace RegexTest
 {
     class Test
     {
+        public static void MatchChar_MatchSingleCharacter()
+        {
+            var context = new MatchContext("aaa");
+            var item = new MatchChar('a');
+
+            Console.WriteLine(context);
+
+            while(item.Match(context))
+            {
+                Console.WriteLine("match success");
+                Console.WriteLine(context);
+            };
+            Console.WriteLine("match over");
+        }
+
         static void Main(string[] args)
         {
-            var c = new Context("abcde");
+            MatchChar_MatchSingleCharacter();
 
-            Console.WriteLine(c);
-
-            c.offset = 2;
-            Console.WriteLine(c);
+            Console.ReadKey();
 
         }
     }
