@@ -8,19 +8,12 @@ namespace Regex
 {
     public static class MatchTest
     {
-        public static void MatchChar_MatchSingleCharacter()
+        public static void MatchCharTest1()
         {
             var context = new MatchContext("aaa");
             var item = new MatchChar('a');
 
-            Console.WriteLine(context);
-
-            while (item.Match(context))
-            {
-                Console.WriteLine("match success");
-                Console.WriteLine(context);
-            };
-            Console.WriteLine("match over");
+            ExecTest(item, context);
         }
 
         public static void MatchListTest1()
@@ -33,19 +26,33 @@ namespace Regex
                     new MatchChar('b'),
                     new MatchChar('c')
                 });
-            Console.WriteLine(context);
 
-            if (list.Match(context))
+            ExecTest(list, context);
+        }
+
+        public static void ExecTest(IMatch token, MatchContext context)
+        {
+            if (token.Match(context))
             {
                 Console.WriteLine("Match Success");
+                Console.WriteLine(context);
+
+                while (token.MatchNext(context))
+                {
+                    Console.WriteLine("MatchNext Success");
+                    Console.WriteLine(context);
+                }
+
+                Console.WriteLine("MatchNext Failed");
+                Console.WriteLine(context);
             }
             else
             {
                 Console.WriteLine("Match Failed");
+                Console.WriteLine(context);
             }
-
-            Console.WriteLine(context);
         }
-
     }
+
+    
 }

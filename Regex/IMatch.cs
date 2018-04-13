@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Regex
 {
-    interface IMatch
+    public interface IMatch
     {
         bool Match(MatchContext context);
         bool MatchNext(MatchContext context);

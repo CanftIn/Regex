@@ -12,7 +12,7 @@ namespace RegexTest
     {
         static void Main(string[] args)
         {
-            MatchTest.MatchListTest1();
+            MatchTest.MatchCharTest1();
 
             Console.ReadKey();
 

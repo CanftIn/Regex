@@ -35,7 +35,12 @@ namespace Regex
 
         public override bool MatchNext(MatchContext context)
         {
-            throw new NotImplementedException();
+            int index = Length - 1;
+            while (index >= 0 && !matchList[index].MatchNext(context))
+                index--;
+            if (index < 0) return false;
+            index++;
+            return true;
         }
     }
 }

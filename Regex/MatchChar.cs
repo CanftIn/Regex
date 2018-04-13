@@ -26,7 +26,7 @@ namespace Regex
 
         public bool MatchNext(MatchContext context)
         {
-            context.offset--;
+            context.offset++;
             return false;
         }
     }
